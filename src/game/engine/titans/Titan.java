@@ -28,10 +28,10 @@ public abstract class Titan implements Comparable<Titan> ,Attackee,Attacker,Mobi
 	public void setCurrentHealth(int currentHealth) {
 		this.currentHealth = currentHealth;
 	}
-	public int getDistanceFromBase() {
+	public int getDistance() {
 		return distanceFromBase;
 	}
-	public void setDistanceFromBase(int distanceFromBase) {
+	public void setDistance(int distanceFromBase) {
 		this.distanceFromBase = distanceFromBase;
 	}
 	public int getSpeed() {
@@ -43,7 +43,7 @@ public abstract class Titan implements Comparable<Titan> ,Attackee,Attacker,Mobi
 	public int getBaseHealth() {
 		return baseHealth;
 	}
-	public int getBaseDamage() {
+	public int getDamage() {
 		return baseDamage;
 	}
 	public int getHeightInMeters() {

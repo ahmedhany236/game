@@ -7,5 +7,7 @@ public class PureTitan  extends Titan {
 		super(baseHealth,baseDamage,heightInMeters,distanceFromBase,speed,resourcesValue,dangerLevel);
 		
 	}
+
+
 	
 }
