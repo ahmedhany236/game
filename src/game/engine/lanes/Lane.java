@@ -1,9 +1,11 @@
 package game.engine.lanes;
 import game.engine.base.*;
-import game.engine.Weapons.*;
+import game.engine.weapons.*;
 import game.engine.titans.*;
+
+
 import java.util.*;
-public class Lane implements Comparable{
+public class Lane implements Comparable<Lane>{
 	private final Wall laneWall;
 	private int dangerLevel;
 	private final PriorityQueue<Titan> titans;
