@@ -1,7 +1,7 @@
-package engine;
+package game.engine;
 import java.io.IOException;
 import java.util.*;
-import game.engine.*;
+
 import game.engine.base.Wall;
 import game.engine.weapons.factory.*;
 import game.engine.titans.*;
