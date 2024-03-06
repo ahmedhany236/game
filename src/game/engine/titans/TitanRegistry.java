@@ -8,7 +8,7 @@ public class TitanRegistry {
 	private int speed;
 	private int resourcesValue;
 	private int dangerLevel;
-	TitanRegistry(int code, int baseHealth, int baseDamage, int heightInMeters, int speed,
+	public TitanRegistry(int code, int baseHealth, int baseDamage, int heightInMeters, int speed,
 			int resourcesValue, int dangerLevel){
 		this.code = code;
 		this.baseHealth = baseHealth;
