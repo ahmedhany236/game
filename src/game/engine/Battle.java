@@ -14,28 +14,21 @@ public class Battle {
 	        { 4, 4, 4, 4, 4, 4, 4 } 
 	};
 						
-	private static int WALL_BASE_HEALTH = 10000;
-	private int numberOfTurns; //r,w
+	private static final int WALL_BASE_HEALTH = 10000;
+	private int numberOfTurns;
 	private int resourcesGathered;
-	private BattlePhase battlePhase = BattlePhase.EARLY; //r,w
-	private int numberOfTitansPerTurn = 1; //r,,w
-	private static int score; //r,w
-	private int titanSpawnDistance; //r,w
+	private BattlePhase battlePhase; 
+	private int numberOfTitansPerTurn; 
+	private int score; 
+	private int titanSpawnDistance;
 	private final WeaponFactory weaponFactory;
-	private final HashMap<Integer, TitanRegistry> titansArchives = DataLoader.readTitanRegistry();
+	private final HashMap<Integer, TitanRegistry> titansArchives;
 	private final ArrayList<Titan> approachingTitans;
 	private final PriorityQueue<Lane> lanes;
-	public static int getWALL_BASE_HEALTH() {
-		return WALL_BASE_HEALTH;
-	}
-	public static void setWALL_BASE_HEALTH(int wALL_BASE_HEALTH) {
-		WALL_BASE_HEALTH = wALL_BASE_HEALTH;
-	}
-	public PriorityQueue<Lane> getLanes() {
-		return lanes;
-	}
 	private final ArrayList<Lane> originalLanes;
-	Battle(int numberOfTurns, int score, int titanSpawnDistance, int initialNumOfLanes,
+	
+	
+	public Battle(int numberOfTurns, int score, int titanSpawnDistance, int initialNumOfLanes,
 			int initialResourcesPerLane) throws IOException{
 		this.numberOfTurns = numberOfTurns;
 		this.score = score;
@@ -46,7 +39,16 @@ public class Battle {
 		this.originalLanes = new ArrayList<Lane>();
 		this.weaponFactory = new WeaponFactory();
 		initializeLanes(initialNumOfLanes);	
+		this.titansArchives = DataLoader.readTitanRegistry();
+		this.battlePhase = BattlePhase.EARLY;
+		this.numberOfTitansPerTurn = 1;
 		
+	}
+	public static int getWALL_BASE_HEALTH() {
+		return WALL_BASE_HEALTH;
+	}
+	public PriorityQueue<Lane> getLanes() {
+		return lanes;
 	}
 	private void initializeLanes(int numOfLanes) {
 		for (int i = 0; i<numOfLanes ; i++) {
@@ -83,11 +85,11 @@ public class Battle {
 	public void setNumberOfTitansPerTurn(int numberOfTitansPerTurn) {
 		this.numberOfTitansPerTurn = numberOfTitansPerTurn;
 	}
-	public static int getScore() {
+	public int getScore() {
 		return score;
 	}
-	public static void setScore(int score) {
-		Battle.score = score;
+	public void setScore(int score) {
+		this.score = score;
 	}
 	public int getTitanSpawnDistance() {
 		return titanSpawnDistance;
@@ -97,6 +99,12 @@ public class Battle {
 	}
 	public ArrayList<Titan> getApproachingTitans() {
 		return approachingTitans;
+	}
+	public HashMap<Integer, TitanRegistry> getTitansArchives() {
+		return titansArchives;
+	}
+	public static int[][] getPhasesApproachingTitans() {
+		return PHASES_APPROACHING_TITANS;
 	}
 	
 }

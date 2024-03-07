@@ -5,13 +5,17 @@ import java.io.IOException;
 import java.util.*;
 import game.engine.titans.TitanRegistry;
 import game.engine.weapons.WeaponRegistry;
+
+
 public class DataLoader {
-	private static String TITANS_FILE_NAME = "titans.csv";
-	private static String WEAPONS_FILE_NAME = "weapons.csv"; 
+	private static final String TITANS_FILE_NAME = "titans.csv";
+	private static final String WEAPONS_FILE_NAME = "weapons.csv"; 
+	
 	public static HashMap<Integer, TitanRegistry> readTitanRegistry() throws IOException{
 		FileReader fr = new FileReader(TITANS_FILE_NAME);
 		BufferedReader br = new BufferedReader(fr);	
-		String line ;
+		String line = "" ;
+		
 		HashMap<Integer, TitanRegistry> h = new HashMap<Integer , TitanRegistry >();
 			while ((line = br.readLine()) != null) {
 				String[] a = line.split(",",7);
