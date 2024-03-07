@@ -26,6 +26,9 @@ public abstract class Titan implements Comparable<Titan> ,Attackee,Attacker,Mobi
 		return currentHealth;
 	}
 	public void setCurrentHealth(int currentHealth) {
+		if (currentHealth<0)
+			this.currentHealth = 0;
+		else
 		this.currentHealth = currentHealth;
 	}
 	public int getDistance() {
