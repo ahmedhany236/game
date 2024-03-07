@@ -55,6 +55,10 @@ public class Battle {
 			lanes.add(l);
 		}
 	}
+	
+	public WeaponFactory getWeaponFactory() {
+		return weaponFactory;
+	}
 	public int getNumberOfTurns() {
 		return numberOfTurns;
 	}

@@ -26,7 +26,7 @@ public class WeaponRegistry {
 	public int getDamage() {
 		return damage;
 	}
-	public void setDamage(int damage) {
+	public void setdamage(int damage) {
 		this.damage = damage;
 	}
 	public String getName() {
@@ -38,7 +38,7 @@ public class WeaponRegistry {
 	public int getMinRange() {
 		return minRange;
 	}
-	public void setMinRange(int minRange) {
+	public void setminRange(int minRange) {
 		this.minRange = minRange;
 	}
 	public int getMaxRange() {
