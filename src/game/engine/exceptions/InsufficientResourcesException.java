@@ -9,7 +9,7 @@ public class InsufficientResourcesException extends GameActionException{
 		this.resourcesProvided = resourcesProvided;
 	}
 	public InsufficientResourcesException(String message, int resourcesProvided) {
-		super();
+		super(message);
 		System.out.println(message);
 		this.resourcesProvided = resourcesProvided;
 	}
