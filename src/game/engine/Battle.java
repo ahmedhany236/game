@@ -8,18 +8,15 @@ import game.engine.titans.*;
 import game.engine.dataloader.DataLoader;
 import game.engine.lanes.Lane;
 public class Battle {
-	private final static int[][] PHASES_APPROACHING_TITANS = {
-	        { 1, 1, 1, 2, 1, 3, 4 },
-	        { 2, 2, 2, 1, 3, 3, 4 },
-	        { 4, 4, 4, 4, 4, 4, 4 } 
-	};
+	private final static int[][] PHASES_APPROACHING_TITANS = 
+		{{1,1,1,2,1,3,4},{2,2,2,1,3,3,4},{4,4,4,4,4,4,4} };
 						
 	private static int WALL_BASE_HEALTH = 10000;
 	private int numberOfTurns; //r,w
 	private int resourcesGathered;
 	private BattlePhase battlePhase = BattlePhase.EARLY; //r,w
 	private int numberOfTitansPerTurn = 1; //r,,w
-	private static int score; //r,w
+	private int score; //r,w
 	private int titanSpawnDistance; //r,w
 	private final WeaponFactory weaponFactory;
 	private final HashMap<Integer, TitanRegistry> titansArchives = DataLoader.readTitanRegistry();
@@ -83,11 +80,11 @@ public class Battle {
 	public void setNumberOfTitansPerTurn(int numberOfTitansPerTurn) {
 		this.numberOfTitansPerTurn = numberOfTitansPerTurn;
 	}
-	public static int getScore() {
+	public int getScore() {
 		return score;
 	}
-	public static void setScore(int score) {
-		Battle.score = score;
+	public void setScore(int score) {
+		this.score = score;
 	}
 	public int getTitanSpawnDistance() {
 		return titanSpawnDistance;
